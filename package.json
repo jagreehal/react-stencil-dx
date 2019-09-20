@@ -1,0 +1,30 @@
+{
+  "name": "react-stencil-dx",
+  "private": true,
+  "version": "1.0.0",
+  "description": "react-stencil-dx",
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "build": "lerna run build",
+    "clean": "lerna clean",
+    "start": "lerna run --scope stencil-web-components --scope react-app-using-stencil-web-components --parallel start",
+    "test": "lerna run test",
+    "test:watch": "lerna exec -- npm test -- --watch"
+  },
+  "author": "Jag Reehal",
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": [
+      "lerna",
+      "**/stencil-web-components",
+      "**/prettier",
+      "**/@testing-library/*"
+    ]
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "lerna": "^3.16.4"
+  }
+}
